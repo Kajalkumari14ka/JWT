@@ -5,6 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+env:
+  ClientSecret: Secret
 
 jobs:
 
@@ -23,3 +25,19 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+  test:
+    name: integration test
+    runs-on:
+      - self-hosted
+      - linux
+
+
+    steps:
+      - name: echo clientSecret
+          run: |
+            echo ${{ env.clientSecret }}
+      - name: add value to field in json file
+        with:
+          file: file.json
+          field: clientSecret
+          value: ${{ env.ClientSecret }}
