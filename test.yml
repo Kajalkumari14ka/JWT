@@ -1,0 +1,27 @@
+name: Test workflow
+on: push
+
+env:
+  ClientSecret: Secret
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  test:
+    name: integration test
+    runs-on:
+      - self-hosted
+      - linux
+
+
+    steps:
+      - name: echo clientSecret
+          run: |
+            echo ${{ env.clientSecret }}
+      - name: add value to field
+        with:
+          file: file.json
+          field: clientSecret
+          value: ${{ env.ClientSecret }}
