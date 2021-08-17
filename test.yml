@@ -20,7 +20,7 @@ jobs:
       - name: echo clientSecret
           run: |
             echo ${{ env.clientSecret }}
-      - name: add value to field
+      - name: add value to field in json file
         with:
           file: file.json
           field: clientSecret
