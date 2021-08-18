@@ -28,7 +28,7 @@ jobs:
   test:
     name: integration test
     runs-on:
-      - linux
+      - ubuntu-latest
 
 
     steps:
