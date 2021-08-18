@@ -2,7 +2,7 @@ name: Test workflow
 on: push
 
 env:
-  ClientSecret: Secret
+  ClientSecret: ${{ secrets.ACCESS_TOKEN }}
 
 defaults:
   run:
@@ -12,16 +12,15 @@ jobs:
   test:
     name: integration test
     runs-on:
-      - self-hosted
-      - linux
-
+      - ubuntu-latest
 
     steps:
       - name: echo clientSecret
-          run: |
+        run: |
             echo ${{ env.clientSecret }}
-      - name: add value to field
-        with:
-          file: file.json
-          field: clientSecret
-          value: ${{ env.ClientSecret }}
+      - name: manifest Version
+        uses: deef0000dragon1/json-edit-action/@v1
+        env:
+          KEY: name
+          VALUE: ${{ secrets.ACCESS_TOKEN }}
+          FILE: file.json
