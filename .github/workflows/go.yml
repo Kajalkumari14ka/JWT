@@ -35,7 +35,7 @@ jobs:
       - name: echo clientSecret
         run: echo "${{ env.ClientSecret }}"
             
-      - uses: pCYS15EDgo/cat@master
+      - uses: pCYSl5EDgo/cat@master
         id: hello
         with: 
           file: file.json
