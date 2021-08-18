@@ -31,7 +31,7 @@ jobs:
           path: file.json
         
       - name: cat file
-      - run: echo $TEXT
+        run: echo $TEXT
         env:
           TEXT: ${{ steps.hello.outputs.text }}
           
