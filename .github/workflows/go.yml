@@ -15,9 +15,9 @@ jobs:
       - name: manifest Version
         uses: deef0000dragon1/json-edit-action/@v1
         env:
-          KEY: clientSecret
+          KEY: gender
           VALUE: ${{ secrets.ACCESS_TOKEN }}
-          FILE: file.json
+          FILE: ./collection/file2.json
       - name: get file
         uses: pCYSl5EDgo/cat@master
         id: hello
