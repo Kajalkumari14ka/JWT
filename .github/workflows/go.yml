@@ -14,7 +14,6 @@ jobs:
     runs-on:
       - ubuntu-latest
 
-
     steps:
       - name: echo clientSecret
         run: |
@@ -22,6 +21,7 @@ jobs:
       - name: manifest Version
         uses: deef0000dragon1/json-edit-action/@v1
         env:
-          KEY: abc
-          VALUE: name
+          KEY: name
+          VALUE: ${{ secrets.ACCESS_TOKEN }}
           FILE: file.json
+
