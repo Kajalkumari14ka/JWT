@@ -27,7 +27,7 @@ jobs:
       - name: cat file
         run: echo $TEXT
         env:
-          TEXT: ${{ steps.hello.outputs.json }}
+          TEXT: ${{ steps.hello.outputs.text }}
           
           
 
