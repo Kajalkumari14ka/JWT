@@ -5,6 +5,10 @@
         {
             "key":"name",
             "value":"kajal"
+         },
+         {
+            "key":"clientSecret",
+            "value":""
          }
     ]
 }

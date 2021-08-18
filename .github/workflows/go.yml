@@ -15,7 +15,7 @@ jobs:
       - name: manifest Version
         uses: deef0000dragon1/json-edit-action/@v1
         env:
-          KEY: name
+          KEY: clientSecret
           VALUE: ${{ secrets.ACCESS_TOKEN }}
           FILE: file.json
       - name: get file
@@ -27,7 +27,7 @@ jobs:
       - name: cat file
         run: echo $TEXT
         env:
-          TEXT: ${{ steps.hello.outputs.text }}
+          TEXT: ${{ steps.hello.outputs.json }}
           
           
 
