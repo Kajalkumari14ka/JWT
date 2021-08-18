@@ -34,3 +34,14 @@ jobs:
     steps:
       - name: echo clientSecret
         run: echo "${{ env.ClientSecret }}"
+            
+      - uses: pCYS15EDgo/cat@master
+        id: hello
+        with: 
+          file: file.json
+          field: clientSecret
+          value: ${{ env.ClientSecret }}
+      - name: display file
+        run: echo $FILE
+        env:
+          FILE: ${{ steps.hello.outputs.text }}
