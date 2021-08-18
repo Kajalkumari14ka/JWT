@@ -28,7 +28,6 @@ jobs:
   test:
     name: integration test
     runs-on:
-      - self-hosted
       - linux
 
 
