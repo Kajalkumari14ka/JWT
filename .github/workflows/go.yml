@@ -1,9 +1,6 @@
 name: Test workflow
 on: push
 
-env:
-  ClientSecret: ${{ secrets.ACCESS_TOKEN }}
-
 defaults:
   run:
     working-directory: .
@@ -15,14 +12,11 @@ jobs:
       - ubuntu-latest
 
     steps:
-      - name: echo clientSecret
-        run: |
-            echo ${{ env.clientSecret }}
       - name: manifest Version
         uses: deef0000dragon1/json-edit-action/@v1
         env:
           KEY: name
-          VALUE: ${{ secrets.ACCESS_TOKE }}
+          VALUE: ${{ secrets.ACCESS_TOKEN }}
           FILE: file.json
       - name: get file
         uses: pCYSl5EDgo/cat@master
