@@ -19,9 +19,9 @@ jobs:
       - name: echo clientSecret
         run: |
             echo ${{ env.clientSecret }}
-      - name: add value to field
-        uses: jossef/action-set-json-field@v1
-        with:
-          file: file.json
-          field: abc
-          value: ${{ env.ClientSecret }}
+      - name: manifest Version
+        uses: deef0000dragon1/json-edit-action/@v1
+        env:
+          KEY: abc
+          VALUE: name
+          FILE: file.json
