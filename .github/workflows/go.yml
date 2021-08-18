@@ -1,25 +1,27 @@
-name: Go
+name: Test workflow
+on: push
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+env:
+  ClientSecret: ${{ secrets.ACCESS_TOKEN }}
+
+defaults:
+  run:
+    working-directory: .
 
 jobs:
+  test:
+    name: integration test
+    runs-on:
+      - ubuntu-latest
 
-  build:
-    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.16
-
-    - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+      - name: echo clientSecret
+        run: |
+            echo ${{ env.clientSecret }}
+      - name: add value to field
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: file.json
+          field: abc
+          value: ${{ env.ClientSecret }}
