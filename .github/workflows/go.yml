@@ -33,8 +33,8 @@ jobs:
 
     steps:
       - name: echo clientSecret
-        run: echo "${{ env.ClientSecret }}"
-
+        run: |
+          echo "${{ env.ClientSecret }}"
       - name: update file    
       - uses: jossef/action-set-json-field@v1
         with: 
