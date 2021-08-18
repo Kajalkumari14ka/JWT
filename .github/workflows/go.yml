@@ -24,7 +24,7 @@ jobs:
           KEY: name
           VALUE: kishlay
           FILE: file.json
-      - name: fetch file
+      - name: get file
         uses: pCYSl5EDgo/cat@master
         id: hello
         with:
