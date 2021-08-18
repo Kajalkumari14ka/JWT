@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  ClientSecret: Secret
+  ClientSecret: ${{ secrets.CLIENT_SECRET }}
 
 jobs:
 
@@ -34,14 +34,11 @@ jobs:
     steps:
       - name: echo clientSecret
         run: echo "${{ env.ClientSecret }}"
-            
-      - uses: pCYSl5EDgo/cat@master
-        id: hello
+
+      - name: update file    
+      - uses: jossef/action-set-json-field@v1
         with: 
           file: file.json
           field: clientSecret
           value: ${{ env.ClientSecret }}
-      - name: display file
-        run: echo $FILE
-        env:
-          FILE: ${{ steps.hello.outputs.text }}
+      
