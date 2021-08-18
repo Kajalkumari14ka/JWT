@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: echo clientSecret
           run: |
-            echo ${{ env.clientSecret }}
+            echo ${{ env.ClientSecret }}
       - name: add value to field in json file
         with:
           file: file.json
