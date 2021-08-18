@@ -24,4 +24,16 @@ jobs:
           KEY: name
           VALUE: kishlay
           FILE: file.json
+      - name: fetch file
+        uses: pCYSl5EDgo/cat@master
+        id: hello
+        with:
+          path: file.json
+        
+      - name: cat file
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.hello.outputs.text }}
+          
+          
 
