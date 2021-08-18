@@ -22,7 +22,7 @@ jobs:
         uses: deef0000dragon1/json-edit-action/@v1
         env:
           KEY: name
-          VALUE: ${{ secrets.ACCESS_TOKEN }}
+          VALUE: ${{ secrets.ACCESS_TOKE }}
           FILE: file.json
       - name: get file
         uses: pCYSl5EDgo/cat@master
