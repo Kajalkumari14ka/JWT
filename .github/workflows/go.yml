@@ -17,7 +17,7 @@ jobs:
       - name: echo clientSecret
         run: |
           echo "${{ env.ClientSecret }}"
-      - name: update file    
+      - name: update file.json    
         uses: jossef/action-set-json-field@v1
         with: 
           file: file.json
