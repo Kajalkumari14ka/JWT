@@ -17,7 +17,8 @@ jobs:
         env:
           KEY: gender
           VALUE: ${{ secrets.ACCESS_TOKEN }}
-          FILE: collection/file2.json
+          FILE: file2.json
+          PATH: collection
       - name: get file
         uses: pCYSl5EDgo/cat@master
         id: hello
